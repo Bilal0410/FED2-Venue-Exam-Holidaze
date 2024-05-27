@@ -38,12 +38,12 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-black p-4">
+    <nav className="bg-red-900 p-4">
       <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between">
         <div>
           <Link
             to="/"
-            className="text-white text-lg lg:text-3xl font-extrabold tracking-tight"
+            className="text-white hover:text-red-500 transition duration-300 text-lg lg:text-3xl font-extrabold tracking-tight"
           >
             Holidaze Venuez
           </Link>
@@ -85,7 +85,7 @@ export default function Navbar() {
             <Link
               key={item.href}
               to={item.href}
-              className="text-white hover:text-blue-300 transition duration-300"
+              className="text-white hover:text-red-500 transition duration-300"
             >
               {item.label}
             </Link>
@@ -95,8 +95,11 @@ export default function Navbar() {
               Logout
             </button>
           ) : (
-            <Link to="/login" className="text-white">
-              Login
+            <Link
+              to="/login"
+              className="text-white hover:text-red-500 transition duration-300"
+            >
+              SIGN IN
             </Link>
           )}
         </div>
