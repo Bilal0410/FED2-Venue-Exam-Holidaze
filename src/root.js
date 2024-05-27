@@ -40,7 +40,7 @@ const profileRoute = new Route({
 
 const listingRoute = new Route({
     getParentRoute: () => rootRoute,
-    path: "/listing",
+    path: "/createvenue",
     component: CreateVenueForm,
   });
 
