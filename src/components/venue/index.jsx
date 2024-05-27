@@ -56,7 +56,7 @@ export default function VenueDetail() {
   return (
     <div className="flex flex-col justify-center flex-1 min-h-full px-6 py-12 bg-white lg:px-8">
       {venue && (
-        <div className="bg-white rounded-lg shadow-md p-6 max-w-md mx-auto">
+        <div className="bg-white hover:bg-red-100 cursor-pointer rounded-lg shadow-md p-6 max-w-md mx-auto">
           {venue.media && venue.media.length > 0 ? (
             <img
               className="rounded-md mb-4"
@@ -99,7 +99,7 @@ export default function VenueDetail() {
             {!venueManager && (
               <button
                 onClick={() => setShowReservationForm(true)}
-                className="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 transition-colors duration-200"
+                className="bg-red-500 text-white py-2 px-4 hover:bg-red-600 rounded transition-colors duration-200"
               >
                 Book
               </button>

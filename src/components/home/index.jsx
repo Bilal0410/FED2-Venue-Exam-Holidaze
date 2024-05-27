@@ -26,7 +26,7 @@ export default function Homefetching() {
       <input
         type="text"
         placeholder="Search venues..."
-        className="mb-4 p-3 border border-gray-300 text-black rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white"
+        className="mb-4 p-3 border border-gray-300 text-black rounded-lg shadow-sm focus:outline-none focus:ring-2 hover:bg-red-100 focus:ring-red-500 bg-white"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
       />
@@ -36,7 +36,7 @@ export default function Homefetching() {
           <a
             key={venue.id}
             href={`/venue/?id=${venue.id}`}
-            className="bg-white-100 p-6 rounded-md border-2 border-blue-300 block"
+            className="bg-white-100 p-6 rounded-md border-2 hover:bg-red-100 border-red-500 block"
           >
             {venue.media && venue.media.length > 0 ? (
               <>

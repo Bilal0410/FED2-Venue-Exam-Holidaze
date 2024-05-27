@@ -257,7 +257,7 @@ function ProfilePageVenues() {
           </h2>
           <div className="flex items-center justify-center mt-4">
             <img
-              className="w-16 h-16 rounded-full border-2 border-blue-500 mr-4"
+              className="w-16 h-16 rounded-full border-2 border-red-500 mr-4"
               src={userAvatar}
               alt={`${userName}'s Avatar`}
             />
@@ -268,7 +268,7 @@ function ProfilePageVenues() {
         </div>
         <div className="text-center">
           <button
-            className="bg-blue-500 text-white py-2 px-6 rounded hover:bg-blue-600 transition-colors duration-200"
+            className=" text-white py-2 px-6 rounded bg-red-600 hover:bg-red-700 transition-colors duration-200"
             onClick={handleChangeAvatar}
           >
             Change Avatar

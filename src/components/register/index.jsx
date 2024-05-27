@@ -230,7 +230,7 @@ function RegisterForm() {
               <button
                 disabled={isLoading}
                 type="submit"
-                className="flex w-full justify-center rounded-md bg-blue-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="flex w-full justify-center rounded-md bg-black px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
               >
                 {isLoading ? "Registering" : "Sign up"}
               </button>
@@ -242,7 +242,7 @@ function RegisterForm() {
           Already a member?{" "}
           <a
             href="/login"
-            className="font-semibold leading-6 text-custom-aqua hover:text-indigo-500"
+            className="font-semibold leading-6 text-custom-aqua hover:text-red-600"
           >
             Sign in
           </a>

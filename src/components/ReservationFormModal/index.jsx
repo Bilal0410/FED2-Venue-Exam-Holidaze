@@ -50,7 +50,7 @@ export default function ReservationFormModal({ onClose, venue }) {
       }, 3000);
     } catch (error) {
       console.error("Error creating booking:", error);
-      setErrorMessage("Error creating booking. Please check the input data.");
+      setErrorMessage("Please sign up or register to create a booking.");
     }
   };
 
@@ -117,13 +117,13 @@ export default function ReservationFormModal({ onClose, venue }) {
             <button
               type="button"
               onClick={onClose}
-              className="text-sm font-semibold leading-6 text-gray-900 "
+              className="ml-4 inline-flex justify-center rounded-md border border-transparent py-2 px-4 text-sm font-medium shadow-sm focus:outline-none focus:ring-2 bg-black text-white hover:bg-gray-600 transition-colors duration-200"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="ml-4 inline-flex justify-center rounded-md border border-transparent bg-green-500 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+              className="ml-4 inline-flex justify-center rounded-md border border-transparent py-2 px-4 text-sm font-medium shadow-sm focus:outline-none focus:ring-2 bg-red-600 text-white hover:bg-red-700 transition-colors duration-200"
             >
               Book
             </button>
