@@ -411,7 +411,7 @@ function ProfilePageVenues() {
         />
       )}
       {selectedItem && !isVenueManager && (
-        <UpdateBookingForm
+        <UpdateReservationForm
           booking={selectedItem}
           onClose={handleCloseUpdateForm}
           onUpdate={handleUpdate}

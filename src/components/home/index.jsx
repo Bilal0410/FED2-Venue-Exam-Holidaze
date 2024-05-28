@@ -85,6 +85,9 @@ export default function Homefetching() {
                 <p>Country: {venue.location.country}</p>
               </div>
             )}
+            <button className="text-red-500 mt-4 font-semibold hover:underline">
+              View More
+            </button>
           </a>
         ))}
       </div>
