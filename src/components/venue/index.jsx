@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import DateChooserModal from "../DateChooserModal";
 import ReservationFormModal from "../ReservationFormModal";
@@ -92,7 +93,7 @@ export default function VenueDetail() {
           <div className="mt-4 flex space-x-4">
             <button
               onClick={() => setShowDateChooser(true)}
-              className="bg-black text-white py-2 px-4 rounded hover:bg-gray-600 transition-colors duration-200"
+              className="bg-black text-white py-2 px-4 rounded hover:bg-gray-800 transition-colors duration-200"
             >
               Check Dates
             </button>
@@ -104,6 +105,16 @@ export default function VenueDetail() {
                 Book
               </button>
             )}
+            <div>
+              <Link to="/">
+                <button
+                  onClick={() => setShowReservationForm(true)}
+                  className="bg-gray-500 text-white py-2 px-4 hover:bg-gray-600 rounded transition-colors duration-200"
+                >
+                  Back
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       )}
