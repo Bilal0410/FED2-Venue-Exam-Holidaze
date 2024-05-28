@@ -257,7 +257,7 @@ function ProfilePageVenues() {
           </h2>
           <div className="flex items-center justify-center mt-4">
             <img
-              className="w-16 h-16 rounded-full border-2 border-red-500 mr-4"
+              className="w-16 h-16 rounded-full border-2 cursor-pointer border-red-500 mr-4"
               src={userAvatar}
               alt={`${userName}'s Avatar`}
             />
