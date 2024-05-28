@@ -92,7 +92,7 @@ export default function Navbar() {
           ))}
           {isLoggedIn ? (
             <button onClick={handleLogout} className="text-white">
-              Logout
+              LOG OUT
             </button>
           ) : (
             <Link

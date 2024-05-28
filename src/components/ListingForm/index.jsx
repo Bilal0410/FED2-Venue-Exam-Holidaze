@@ -96,7 +96,7 @@ export default function CreateVenueForm({ onAddVenue }) {
   };
 
   return (
-    <div className="flex flex-col justify-center min-h-full px-4 py-6 bg-white lg:px-8">
+    <div className="flex flex-col justify-center min-h-full px-4 py-20 bg-white lg:px-8">
       <form
         onSubmit={handleSubmit}
         className="space-y-6 px-4 py-6 shadow-md sm:mx-auto sm:w-full sm:max-w-sm"

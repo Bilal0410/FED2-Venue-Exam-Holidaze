@@ -327,7 +327,7 @@ function ProfilePageVenues() {
                   venues.map((venue) => (
                     <div
                       key={venue.id}
-                      className="bg-white p-6 rounded-md border-2 border-blue-300"
+                      className="bg-white p-6 rounded-md border-2 border-red-500 hover:bg-red-100"
                     >
                       <h1 className="text-2xl font-bold mb-2 text-black overflow-hidden whitespace-nowrap text-overflow-ellipsis">
                         {venue.name}
@@ -382,7 +382,7 @@ function ProfilePageVenues() {
                   filteredBookings.map((booking) => (
                     <div
                       key={booking.id}
-                      className="bg-white p-6 rounded-md border-2 border-blue-300"
+                      className="bg-white p-6 rounded-md border-2 border-red-500 hover:bg-red-100"
                     >
                       <h1 className="text-2xl font-bold mb-2 text-black overflow-hidden whitespace-nowrap text-overflow-ellipsis">
                         {booking.venue?.name || "Unknown Venue"}
