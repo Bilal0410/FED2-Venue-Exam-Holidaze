@@ -250,14 +250,14 @@ function ProfilePageVenues() {
 
   return (
     <div className="flex flex-col justify-center items-center min-h-screen bg-white">
-      <div className="p-4 w-full max-w-2xl bg-white rounded-lg shadow-md py-6 px-4">
+      <div className="p-4 w-full max-w-2xl bg-white rounded-lg shadow-md py-6 px-4 hover:bg-red-100">
         <div className="mb-6">
           <h2 className="text-3xl font-bold text-center text-gray-800">
             Your Profile
           </h2>
           <div className="flex items-center justify-center mt-4">
             <img
-              className="w-16 h-16 rounded-full border-2 border-red-500 mr-4"
+              className="w-16 h-16 rounded-full border-2 border-red-500 cursor-pointer mr-4"
               src={userAvatar}
               alt={`${userName}'s Avatar`}
             />
