@@ -59,14 +59,14 @@ function ProfilePageVenues() {
           }
 
           const venuesData = await venueResponse.json();
-          console.log("Fetched venues:", venuesData); // Debugging: Check the fetched data
+          console.log("Fetched venues:", venuesData);
           setVenues(venuesData);
 
           const allBookings = venuesData.flatMap(
             (venue) =>
               venue.bookings.map((booking) => ({ ...booking, venue })) || []
           );
-          console.log("All bookings from venues:", allBookings); // Debugging: Check bookings data
+          console.log("All bookings from venues:", allBookings);
           setBookings(allBookings);
         } else {
           const bookingsResponse = await fetch(
@@ -90,7 +90,7 @@ function ProfilePageVenues() {
           }
 
           const bookingsData = await bookingsResponse.json();
-          console.log("Fetched bookings:", bookingsData); // Debugging: Check the fetched data
+          console.log("Fetched bookings:", bookingsData);
           setBookings(bookingsData || []);
         }
 
@@ -257,7 +257,7 @@ function ProfilePageVenues() {
           </h2>
           <div className="flex items-center justify-center mt-4">
             <img
-              className="w-16 h-16 rounded-full border-2 border-red-500 cursor-pointer mr-4"
+              className="w-16 h-16 rounded-full border-2 border-red-500 mr-4"
               src={userAvatar}
               alt={`${userName}'s Avatar`}
             />
@@ -268,7 +268,7 @@ function ProfilePageVenues() {
         </div>
         <div className="text-center">
           <button
-            className=" text-white py-2 px-6 rounded bg-red-600 hover:bg-red-700 transition-colors duration-200"
+            className="bg-red-500 text-white py-2 px-6 rounded hover:bg-red-600 transition-colors duration-200"
             onClick={handleChangeAvatar}
           >
             Change Avatar
@@ -281,7 +281,9 @@ function ProfilePageVenues() {
         <>
           {!isVenueManager && (
             <>
-              <h2 className="text-2xl font-bold mt-6 mb-4">My Bookings</h2>
+              <h2 className="text-2xl font-bold mt-6 mb-4 text-gray-600">
+                My Bookings
+              </h2>
               <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 py-6 px-4">
                 {filteredBookings.length > 0 ? (
                   filteredBookings.map((booking) => (
@@ -289,9 +291,27 @@ function ProfilePageVenues() {
                       key={booking.id}
                       className="bg-white p-6 rounded-md border-2 border-blue-300"
                     >
-                      <h1 className="text-2xl font-bold mb-2 text-black overflow-hidden whitespace-nowrap text-overflow-ellipsis">
+                      <h1 className="text-2xl font-bold mb-2 text-gray-600 overflow-hidden whitespace-nowrap text-overflow-ellipsis">
                         {booking.venue?.name || "Unknown Venue"}
                       </h1>
+                      {booking.venue?.media &&
+                      booking.venue.media.length > 0 ? (
+                        <img
+                          className="mt-4"
+                          src={
+                            typeof booking.venue.media[0] === "string"
+                              ? booking.venue.media[0]
+                              : booking.venue.media[0].url
+                          }
+                          alt={booking.venue.name}
+                        />
+                      ) : (
+                        <div className="mt-4 bg-gray-200 h-48 flex items-center justify-center">
+                          <span className="text-gray-600">
+                            No Image Available
+                          </span>
+                        </div>
+                      )}
                       <p className="text-gray-600">
                         Booking for {booking.guests} guests from{" "}
                         {formatDate(booking.dateFrom)} to{" "}
@@ -321,7 +341,9 @@ function ProfilePageVenues() {
           )}
           {isVenueManager && (
             <>
-              <h2 className="text-2xl font-bold mt-6 mb-4">My Venues</h2>
+              <h2 className="text-2xl font-bold mt-6 mb-4 text-gray-600">
+                My Venues
+              </h2>
               <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 py-6 px-4">
                 {venues.length > 0 ? (
                   venues.map((venue) => (
@@ -329,9 +351,26 @@ function ProfilePageVenues() {
                       key={venue.id}
                       className="bg-white p-6 rounded-md border-2 border-red-500 hover:bg-red-100"
                     >
-                      <h1 className="text-2xl font-bold mb-2 text-black overflow-hidden whitespace-nowrap text-overflow-ellipsis">
+                      <h1 className="text-2xl font-bold mb-2 text-gray-600 overflow-hidden whitespace-nowrap text-overflow-ellipsis">
                         {venue.name}
                       </h1>
+                      {venue.media && venue.media.length > 0 ? (
+                        <img
+                          className="mt-4"
+                          src={
+                            typeof venue.media[0] === "string"
+                              ? venue.media[0]
+                              : venue.media[0].url
+                          }
+                          alt={venue.name}
+                        />
+                      ) : (
+                        <div className="mt-4 bg-gray-200 h-48 flex items-center justify-center">
+                          <span className="text-gray-600">
+                            No Image Available
+                          </span>
+                        </div>
+                      )}
                       <p className="text-gray-600">{venue.description}</p>
                       <p className="text-gray-600">Price: ${venue.price}</p>
                       <p className="text-gray-600">
@@ -374,7 +413,7 @@ function ProfilePageVenues() {
                   <p className="text-black">No venues available.</p>
                 )}
               </div>
-              <h2 className="text-2xl font-bold mt-6 mb-4">
+              <h2 className="text-2xl font-bold mt-6 mb-4 text-gray-600">
                 Bookings on Venues
               </h2>
               <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 py-6 px-4">
@@ -384,7 +423,7 @@ function ProfilePageVenues() {
                       key={booking.id}
                       className="bg-white p-6 rounded-md border-2 border-red-500 hover:bg-red-100"
                     >
-                      <h1 className="text-2xl font-bold mb-2 text-black overflow-hidden whitespace-nowrap text-overflow-ellipsis">
+                      <h1 className="text-2xl font-bold mb-2 text-gray-600 overflow-hidden whitespace-nowrap text-overflow-ellipsis">
                         {booking.venue?.name || "Unknown Venue"}
                       </h1>
                       <p className="text-gray-600">
@@ -392,7 +431,7 @@ function ProfilePageVenues() {
                         {formatDate(booking.dateFrom)} to{" "}
                         {formatDate(booking.dateTo)}
                       </p>
-                      <div className="flex justify-between mt-4"></div>
+                      {/* Removed Update and Delete buttons */}
                     </div>
                   ))
                 ) : (
